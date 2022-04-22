@@ -40,6 +40,7 @@ apps:
       CONF_ARG: "--confdir=$SNAP_DATA/config/device-simple/res"
       DEVICE_DEVICESDIR: "$SNAP_DATA/config/device-simple/res/devices"
       DEVICE_PROFILESDIR: "$SNAP_DATA/config/device-simple/res/profiles"
+      LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$SNAP/usr/lib
     # The service is a simple service that is directly exec'd and expected to
     # always run in a single long-lived process
     daemon: simple
@@ -61,7 +62,7 @@ parts:
     plugin: make
     build-packages: [git, libzmq3-dev, zip, pkg-config]
     build-snaps:
-      - go/1.16/stable
+      - go/1.18/stable
     stage-packages: [libzmq5]
     override-build: |
       # Build device-simple first
