@@ -40,7 +40,7 @@ apps:
       CONF_ARG: "--confdir=$SNAP_DATA/config/device-simple/res"
       DEVICE_DEVICESDIR: "$SNAP_DATA/config/device-simple/res/devices"
       DEVICE_PROFILESDIR: "$SNAP_DATA/config/device-simple/res/profiles"
-      LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$SNAP/usr/lib
+      LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$SNAP/usr/lib/aarch64-linux-gnu
     # The service is a simple service that is directly exec'd and expected to
     # always run in a single long-lived process
     daemon: simple
