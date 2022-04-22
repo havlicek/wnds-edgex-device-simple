@@ -16,7 +16,7 @@ epoch: 5
 
 # What architectures to build the snap on
 architectures:
-  - build-on: amd64
+#  - build-on: amd64
   - build-on: arm64
 
 # The "stability" of the snap and what users can expect from it
