@@ -71,7 +71,7 @@ parts:
       # Copy the resulting binary into $SNAPCRAFT_PART_INSTALL in the build
       # environment, which snapcraft will pack into $SNAP when the build is
       # done.
-      install -DT "./src/cmd/device-simple/device-simple" \
+      install -DT "./cmd/device-simple/device-simple" \
         "$SNAPCRAFT_PART_INSTALL/bin/device-simple"
       
       # "ProfilesDir" in combination with the confdir and profile command-line
@@ -79,13 +79,13 @@ parts:
       # Change "ProfilesDir" to be under $SNAP_DATA which is writable and 
       # where the install hook copies the config files and device profiles to
       # when the snap is first installed
-      install -DT "./src/cmd/device-simple/res/configuration.toml" \
+      install -DT "./cmd/device-simple/res/configuration.toml" \
         "$SNAPCRAFT_PART_INSTALL/config/device-simple/res/configuration.toml"
 
       # Install the example device and device profile
-      install -DT "./src/cmd/device-simple/res/devices/simple-device.toml" \
+      install -DT "./cmd/device-simple/res/devices/simple-device.toml" \
         "$SNAPCRAFT_PART_INSTALL/config/device-simple/res/devices/simple-device.toml"
-      install -DT "./src/cmd/device-simple/res/profiles/Simple-Driver.yaml" \
+      install -DT "./cmd/device-simple/res/profiles/Simple-Driver.yaml" \
         "$SNAPCRAFT_PART_INSTALL/config/device-simple/res/profiles/Simple-Driver.yaml"
 
       # Also install the Attribution.txt and LICENSE files into the snap at 
@@ -93,7 +93,7 @@ parts:
       # licenses in the snap.
       # Note also if the license is changed that the license key in the
       # metadata for the snap at the top of this file should be updated too.
-      install -DT "./src/cmd/device-simple/Attribution.txt" \
+      install -DT "./cmd/device-simple/Attribution.txt" \
          "$SNAPCRAFT_PART_INSTALL/usr/share/doc/device-simple/Attribution.txt"
       install -DT "./LICENSE" \
          "$SNAPCRAFT_PART_INSTALL/usr/share/doc/device-simple/LICENSE"
